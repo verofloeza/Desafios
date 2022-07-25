@@ -7,7 +7,7 @@ class Usuario {
 
     }
     getFullName(){
-        return `El nombre completo es ${this.nombre} ${this.apellido}`;
+        return this.nombre+" "+this.apellido;
     }
     addMascota(mascotaNueva){
         this.mascotas.push(mascotaNueva);
@@ -15,7 +15,7 @@ class Usuario {
 
     }
     countMascota(){
-        return `La cantidad de mascotas es ${this.mascotas.length}`;
+        return this.mascotas.length;
     }
     addBook(nuevoLibro){
         this.libros.push(nuevoLibro);
@@ -27,20 +27,20 @@ class Usuario {
         for ( let count = 0; count < cantLibros; count++ ){
             nombresLibros.push(this.libros[count].nombre)
         }
-        return `Los nombres de los libros son ${nombresLibros}`;;
+        return nombresLibros;
     }
 }
 
 const usuario1 = new Usuario( "Agustín", "Perez", [ {nombre:"El Principito", autor: "Antoine de Saint-Exupéry" }, { nombre: "El extranjero", autor: "Albert Camus"}], ["perro", "gato"]);
 console.log(usuario1.getFullName());
-console.log(usuario1.addMascota("Hamster"));
+void(usuario1.addMascota("Hamster"));
 console.log(usuario1.countMascota());
-console.log(usuario1.addBook({nombre: "Don Quijote de La Mancha", autor:"Miguel de Cervates"}));
+void(usuario1.addBook({nombre: "Don Quijote de La Mancha", autor:"Miguel de Cervates"}));
 console.log(usuario1.getBookNames());
 
 const usuario2 = new Usuario( "Ariel", "Lopez", [ {nombre:"1984", autor: "George Orwell" }, { nombre: "Un mundo feliz", autor: "Aldoux Huxley"}, { nombre: "El retrato de Dorian Gray", autor: "Oscar Wilde"}], ["Vaca", "Gallo", "Ganso"]);
 console.log(usuario2.getFullName());
-console.log(usuario2.addMascota("Pato"));
+void(usuario2.addMascota("Pato"));
 console.log(usuario2.countMascota());
-console.log(usuario2.addBook({nombre: "Cien años de soledad", autor:"Gabriel García Márquez"}));
+void(usuario2.addBook({nombre: "Cien años de soledad", autor:"Gabriel García Márquez"}));
 console.log(usuario2.getBookNames());
